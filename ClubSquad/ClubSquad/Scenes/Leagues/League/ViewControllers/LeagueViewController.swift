@@ -17,6 +17,7 @@ class LeagueViewController: UIViewController {
     private let tableViewCategoriesCellHeight: CGFloat = 44
     
     // MARK: - Public properties
+    var isUELLeague: Bool = false
     var team: Team!
     var categories: [String] = []
     
@@ -69,7 +70,7 @@ extension LeagueViewController: UITableViewDataSource {
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoriesTableViewCell.identifier, for: indexPath) as! TeamCategoriesTableViewCell
             cell.delegate = self
-            cell.setupUI(with: categories)
+            cell.setupUI(with: categories, isUELLeague: isUELLeague)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoryTableViewCell.identifier, for: indexPath) as! TeamCategoryTableViewCell

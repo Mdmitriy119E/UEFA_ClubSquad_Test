@@ -20,6 +20,7 @@ class TeamCategoriesTableViewCell: UITableViewCell {
     private let minimumInterSpacing: CGFloat = 16
     private let collectionViewCellHeight: CGFloat = 44
     private var categories: [String] = []
+    private var isUELLeague: Bool = false
     
     // MARK: - Public properties
     static let identifier = String(describing: TeamCategoriesTableViewCell.self)
@@ -62,8 +63,9 @@ class TeamCategoriesTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public methods
-    func setupUI(with categories: [String]) {
+    func setupUI(with categories: [String], isUELLeague: Bool) {
         self.categories = categories
+        self.isUELLeague = isUELLeague
     }
 }
 
@@ -75,7 +77,9 @@ extension TeamCategoriesTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamCategoryCollectionViewCell.identifier, for: indexPath) as! TeamCategoryCollectionViewCell
-        cell.setUI(with: categories[indexPath.item], isSelected: indexPath.item == selectedCategory)
+        cell.setUI(with: categories[indexPath.item],
+                   isSelected: indexPath.item == selectedCategory,
+                   isUELLeague: isUELLeague)
         return cell
     }
 }

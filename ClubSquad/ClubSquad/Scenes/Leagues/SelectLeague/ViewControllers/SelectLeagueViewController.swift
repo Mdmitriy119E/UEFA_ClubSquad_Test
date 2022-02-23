@@ -16,6 +16,7 @@ class SelectLeagueViewController: UIViewController {
             vc.categories = ["Overview", "Matches", "Groups", "Stats", "Squad"]
         } else if segue.identifier == "toUEL" {
             let vc = segue.destination as! LeagueViewController
+            vc.isUELLeague = true
             vc.team = Team.getMockUELTeam()
             vc.categories = ["Overview", "Matches", "Groups", "Stats", "Squad"]
         }

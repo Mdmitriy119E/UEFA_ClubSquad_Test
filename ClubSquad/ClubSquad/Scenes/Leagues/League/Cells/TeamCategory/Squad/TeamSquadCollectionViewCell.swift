@@ -40,9 +40,10 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
     
     private func getTableViewFooterView() -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 84))
-        view.backgroundColor = UIColor(named: "LightBlack")
+        view.backgroundColor = Colors.lightBlack
         let label = UILabel(frame: CGRect(x: 16, y: 16, width: tableView.frame.size.width, height: 15))
         label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.textColor = Colors.white_7Opacity
         label.text = "* Player list B"
         view.addSubview(label)
         return view
@@ -91,7 +92,7 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
     
     private func getViewForHeaderInSection(_ section: Int) -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-        view.backgroundColor = UIColor(named: "DarkBlue")
+        view.backgroundColor = Colors.darkBlue
         let label = UILabel(frame: CGRect(x: 16, y: 0, width: tableView.frame.size.width, height: 50))
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textColor = .white
@@ -102,9 +103,9 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
     
     private func getViewForFooterInSection() -> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 24))
-        view.backgroundColor = UIColor(named: "LighBlack")
+        view.backgroundColor = Colors.lightBlack
         let subView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 16))
-        subView.backgroundColor = UIColor(named: "DarkBlue")
+        subView.backgroundColor = Colors.darkBlue
         view.addSubview(subView)
         return view
     }
