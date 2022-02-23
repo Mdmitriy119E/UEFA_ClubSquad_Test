@@ -15,6 +15,8 @@
 		722D580B27C6180900BA3E86 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580A27C6180900BA3E86 /* Player.swift */; };
 		722D580D27C6180F00BA3E86 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580C27C6180F00BA3E86 /* Team.swift */; };
 		722D580F27C618E200BA3E86 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722D580E27C618E200BA3E86 /* Colors.xcassets */; };
+		722D581327C61D1000BA3E86 /* UCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722D581227C61D1000BA3E86 /* UCL.storyboard */; };
+		722D581527C61D1400BA3E86 /* UEL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722D581427C61D1400BA3E86 /* UEL.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		722D580A27C6180900BA3E86 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		722D580C27C6180F00BA3E86 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		722D580E27C618E200BA3E86 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		722D581227C61D1000BA3E86 /* UCL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UCL.storyboard; sourceTree = "<group>"; };
+		722D581427C61D1400BA3E86 /* UEL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UEL.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				722D580627C6169C00BA3E86 /* SelectLeague */,
+				722D581027C61C1300BA3E86 /* UCL */,
+				722D581127C61C1900BA3E86 /* UEL */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -111,6 +117,22 @@
 				722D580C27C6180F00BA3E86 /* Team.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		722D581027C61C1300BA3E86 /* UCL */ = {
+			isa = PBXGroup;
+			children = (
+				722D581227C61D1000BA3E86 /* UCL.storyboard */,
+			);
+			path = UCL;
+			sourceTree = "<group>";
+		};
+		722D581127C61C1900BA3E86 /* UEL */ = {
+			isa = PBXGroup;
+			children = (
+				722D581427C61D1400BA3E86 /* UEL.storyboard */,
+			);
+			path = UEL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722D581327C61D1000BA3E86 /* UCL.storyboard in Resources */,
 				722D57FC27C6163000BA3E86 /* LaunchScreen.storyboard in Resources */,
 				722D580F27C618E200BA3E86 /* Colors.xcassets in Resources */,
+				722D581527C61D1400BA3E86 /* UEL.storyboard in Resources */,
 				722D580827C616BB00BA3E86 /* SelectLeague.storyboard in Resources */,
 				722D57F927C6163000BA3E86 /* Assets.xcassets in Resources */,
 			);
