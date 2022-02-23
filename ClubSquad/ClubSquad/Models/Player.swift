@@ -15,10 +15,10 @@ struct Player {
     let type: PlayerType
 }
 
-enum PlayerType {
-    case goalkeeper
-    case defender
-    case midfieldier
-    case forward
-    case coach
+enum PlayerType: String, CaseIterable {
+    case goalkeeper = "Goalkeepers"
+    case defender = "Defenders"
+    case midfieldier = "Midfildiers"
+    case forward = "Forwards"
+    case coach = "Coach"
 }

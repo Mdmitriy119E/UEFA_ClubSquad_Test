@@ -15,7 +15,9 @@ class UCLViewController: UIViewController {
     // MARK: - Private properties
     private let tableViewHeaderCellHeight: CGFloat = 286
     private let tableViewCategoriesCellHeight: CGFloat = 44
+    private var tableViewCategoryCellHeight: CGFloat = 400
     private let categories =  ["Overview", "Matches", "Groups", "Stats", "Squad"]
+    private let team = Team.getMockUCLTeam()
     
     // MARK: - Overriden methods
     override func viewDidLoad() {
@@ -44,16 +46,20 @@ class UCLViewController: UIViewController {
 // MARK: - Table view data source
 extension UCLViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamHeaderTableViewCell.identifier, for: indexPath) as! TeamHeaderTableViewCell
             return cell
-        } else {
+        } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoriesTableViewCell.identifier, for: indexPath) as! TeamCategoriesTableViewCell
             cell.setupUI(with: categories)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoryTableViewCell.identifier, for: indexPath) as! TeamCategoryTableViewCell
+            cell.setupUI(with: categories, and: team)
             return cell
         }
     }
@@ -64,8 +70,10 @@ extension UCLViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return tableViewHeaderCellHeight
-        } else {
+        } else if indexPath.row == 1 {
             return tableViewCategoriesCellHeight
+        } else {
+            return tableViewCategoryCellHeight
         }
     }
 }
