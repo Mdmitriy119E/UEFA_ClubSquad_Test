@@ -15,7 +15,6 @@ class LeagueViewController: UIViewController {
     // MARK: - Private properties
     private let tableViewHeaderCellHeight: CGFloat = 286
     private let tableViewCategoriesCellHeight: CGFloat = 44
-    private var tableViewCategoryCellHeight: CGFloat = 400
     
     // MARK: - Public properties
     var team: Team!
