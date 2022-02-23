@@ -14,7 +14,7 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private properties
     private let tableViewHeaderForSectionHeight: CGFloat = 50
-    private let tableViewFooterForSectionHeight: CGFloat = 8
+    private let tableViewFooterForSectionHeight: CGFloat = 24
     private let tableViewPlayerCellHeight: CGFloat = 60
     private var team: Team?
     private var filteredPlayers: [PlayerType: [Player]] = [:]
@@ -101,8 +101,11 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
     }
     
     private func getViewForFooterInSection() -> UIView {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 8))
-        view.backgroundColor = UIColor(named: "LightBlack")
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 24))
+        view.backgroundColor = UIColor(named: "LighBlack")
+        let subView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 16))
+        subView.backgroundColor = UIColor(named: "DarkBlue")
+        view.addSubview(subView)
         return view
     }
 }

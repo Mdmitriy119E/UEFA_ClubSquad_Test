@@ -98,7 +98,7 @@ extension LeagueViewController: UITableViewDelegate {
         let sectionsHeadersHeight = sectionHeaderHeight * PlayerType.allCases.count
         let playerCellHeight = 60
         let playersCellsHeight = playerCellHeight * team.players.count
-        let sectionFooterHeight = 8
+        let sectionFooterHeight = 24
         let sectionsFooterHeight = sectionFooterHeight * PlayerType.allCases.count
         let tableViewFooterHeight = 84
         return CGFloat(sectionsHeadersHeight + playersCellsHeight + sectionsFooterHeight + tableViewFooterHeight)
