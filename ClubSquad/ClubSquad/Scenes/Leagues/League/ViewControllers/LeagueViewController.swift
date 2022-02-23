@@ -15,6 +15,7 @@ class LeagueViewController: UIViewController {
     // MARK: - Private properties
     private let tableViewHeaderCellHeight: CGFloat = 286
     private let tableViewCategoriesCellHeight: CGFloat = 44
+    private var isCollapsed = false
     
     // MARK: - Public properties
     var isUELLeague: Bool = false
@@ -34,7 +35,13 @@ class LeagueViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @objc private func starButtonTapped() { }
+    @objc private func starButtonTapped() {
+        isCollapsed = !isCollapsed
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [IndexPath(row: 2, section: 0)],
+                             with: isCollapsed ? .top : .bottom)
+        tableView.endUpdates()
+    }
     
     // MARK: - Private methods
     private func setTableViewDelegate() {
@@ -89,7 +96,7 @@ extension LeagueViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             return tableViewCategoriesCellHeight
         } else {
-            return getHeightForSquadCell()
+            return isCollapsed ? 0 : getHeightForSquadCell()
         }
     }
     
