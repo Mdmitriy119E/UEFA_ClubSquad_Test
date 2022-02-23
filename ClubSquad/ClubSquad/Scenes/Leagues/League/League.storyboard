@@ -14,7 +14,7 @@
         <!--Barcelona-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="Barcelona" id="Y6W-OH-hqX" customClass="UCLViewController" customModule="ClubSquad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Barcelona" id="Y6W-OH-hqX" customClass="LeagueViewController" customModule="ClubSquad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,11 +94,11 @@
                                                         <size key="itemSize" width="128" height="44"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamCategoryCollectionViewCell" id="ACZ-SH-Z3t" customClass="TeamCategoryCollectionViewCell" customModule="ClubSquad" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="0.0" width="128" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d1F-cY-2a6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="44"/>
@@ -106,7 +106,7 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1R-GA-Gft">
                                                                         <rect key="frame" x="0.0" y="13.5" width="128" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" name="White7_Opacity"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -116,6 +116,11 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="3" id="LC6-9b-w0q"/>
                                                                         </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <real key="value" value="1.5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="Blue"/>
@@ -160,7 +165,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7s1-lJ-rTr">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
-                                                    <color key="backgroundColor" name="LightBlack"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1bc-T1-CzJ">
                                                         <size key="itemSize" width="414" height="400"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>

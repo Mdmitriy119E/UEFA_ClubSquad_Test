@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TableViewCategoryCellDelegate: AnyObject {
+    func reloadCategoriesCell(with selectedCategory: Int)
+}
+
 class TeamCategoryTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
@@ -14,10 +18,11 @@ class TeamCategoryTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     private var allCategories: [String] = []
-    private var team: Team!
+    private var team: Team?
     
     // MARK: - Public properties
     static let identifier = String(describing: TeamCategoryTableViewCell.self)
+    weak var delegate: TableViewCategoryCellDelegate?
     
     // MARK: - Overriden methods
     override func awakeFromNib() {
@@ -70,7 +75,12 @@ extension TeamCategoryTableViewCell: UICollectionViewDataSource {
 }
 
 // MARK: - Collection view delegate
-extension TeamCategoryTableViewCell: UICollectionViewDelegate { }
+extension TeamCategoryTableViewCell: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x / collectionView.frame.width)
+        delegate?.reloadCategoriesCell(with: index)
+    }
+}
 
 // MARK: - Collection view delegate flow layout
 extension TeamCategoryTableViewCell: UICollectionViewDelegateFlowLayout {

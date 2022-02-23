@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UCLViewController: UIViewController {
+class LeagueViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -16,13 +16,16 @@ class UCLViewController: UIViewController {
     private let tableViewHeaderCellHeight: CGFloat = 286
     private let tableViewCategoriesCellHeight: CGFloat = 44
     private var tableViewCategoryCellHeight: CGFloat = 400
-    private let categories =  ["Overview", "Matches", "Groups", "Stats", "Squad"]
-    private let team = Team.getMockUCLTeam()
+    
+    // MARK: - Public properties
+    var team: Team!
+    var categories: [String] = []
     
     // MARK: - Overriden methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableViewDelegate()
+        addRightBarButtonItem()
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,10 +33,20 @@ class UCLViewController: UIViewController {
         setTableViewContentInset()
     }
     
+    // MARK: - IBActions
+    @objc private func starButtonTapped() { }
+    
     // MARK: - Private methods
     private func setTableViewDelegate() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    private func addRightBarButtonItem() {
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "StarIcon"),
+                                                             style: .plain,
+                                                             target: self,
+                                                             action: #selector(starButtonTapped))
     }
     
     private func setTableViewContentInset() {
@@ -44,7 +57,7 @@ class UCLViewController: UIViewController {
 }
 
 // MARK: - Table view data source
-extension UCLViewController: UITableViewDataSource {
+extension LeagueViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -56,10 +69,12 @@ extension UCLViewController: UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoriesTableViewCell.identifier, for: indexPath) as! TeamCategoriesTableViewCell
+            cell.delegate = self
             cell.setupUI(with: categories)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoryTableViewCell.identifier, for: indexPath) as! TeamCategoryTableViewCell
+            cell.delegate = self
             cell.setupUI(with: categories, and: team)
             return cell
         }
@@ -67,18 +82,18 @@ extension UCLViewController: UITableViewDataSource {
 }
 
 // MARK: - Table view delegate
-extension UCLViewController: UITableViewDelegate {
+extension LeagueViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return tableViewHeaderCellHeight
         } else if indexPath.row == 1 {
             return tableViewCategoriesCellHeight
         } else {
-            return getHeightForSquad()
+            return getHeightForSquadCell()
         }
     }
     
-    private func getHeightForSquad() -> CGFloat {
+    private func getHeightForSquadCell() -> CGFloat {
         let sectionHeaderHeight = 50
         let sectionsHeadersHeight = sectionHeaderHeight * PlayerType.allCases.count
         let playerCellHeight = 60
@@ -87,5 +102,26 @@ extension UCLViewController: UITableViewDelegate {
         let sectionsFooterHeight = sectionFooterHeight * PlayerType.allCases.count
         let tableViewFooterHeight = 84
         return CGFloat(sectionsHeadersHeight + playersCellsHeight + sectionsFooterHeight + tableViewFooterHeight)
+    }
+}
+
+// MARK: - Table view categories cell delegate
+extension LeagueViewController: TableViewCategoryCellDelegate {
+    func reloadCategoriesCell(with selectedCategory: Int) {
+        let categoriesCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TeamCategoriesTableViewCell
+        if (categoriesCell.selectedCategory != selectedCategory) {
+            categoriesCell.selectedCategory = selectedCategory
+            categoriesCell.collectionView.reloadData()
+        }
+    }
+}
+
+// MARK: - Table view categories cell delegate
+extension LeagueViewController: TableViewCategoriesCellDelegate {
+    func reloadCategoryCell(with selectedCategory: Int) {
+        let categoryCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! TeamCategoryTableViewCell
+        categoryCell.collectionView.scrollToItem(at: IndexPath(item: selectedCategory, section: 0),
+                                                 at: [.centeredVertically, .centeredHorizontally],
+                                                 animated: true)
     }
 }

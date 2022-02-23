@@ -11,5 +11,4 @@ class TeamStatsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public properties
     static let identifier = String(describing: TeamStatsCollectionViewCell.self)
-    
 }

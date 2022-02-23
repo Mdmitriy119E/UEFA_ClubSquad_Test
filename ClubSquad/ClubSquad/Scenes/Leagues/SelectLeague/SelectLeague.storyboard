@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select League View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SelectLeagueViewController" customModule="ClubSquad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="aSK-KG-eb6" kind="show" identifier="toUCL" id="Clc-wt-acv"/>
+                                            <segue destination="LW3-Zt-hNa" kind="show" identifier="toUCL" id="CBa-jJ-sCk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44z-YU-zbC">
@@ -58,7 +58,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="RRD-U8-PGY" kind="show" identifier="toUEL" id="1Yf-Y3-yjY"/>
+                                            <segue destination="ByL-pL-UTZ" kind="show" identifier="toUEL" id="tBh-Zs-yoz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -81,25 +81,25 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="95.758928571428569"/>
         </scene>
-        <!--UCL-->
-        <scene sceneID="CwI-du-vLV">
+        <!--League-->
+        <scene sceneID="CJS-YY-2IT">
             <objects>
-                <viewControllerPlaceholder storyboardName="UCL" id="aSK-KG-eb6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="kUu-gR-goL"/>
+                <viewControllerPlaceholder storyboardName="League" id="LW3-Zt-hNa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lWI-eZ-GeN"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6KT-zC-UQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KZ-VD-ge8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673.1884057971015" y="43.526785714285715"/>
+            <point key="canvasLocation" x="1703" y="58"/>
         </scene>
-        <!--UEL-->
-        <scene sceneID="Zbj-11-ASr">
+        <!--League-->
+        <scene sceneID="lx6-je-7Kp">
             <objects>
-                <viewControllerPlaceholder storyboardName="UEL" id="RRD-U8-PGY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="lKT-vy-HtX"/>
+                <viewControllerPlaceholder storyboardName="League" id="ByL-pL-UTZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FKT-az-WSf"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cbb-7i-FdR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOV-ky-kTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="117"/>
+            <point key="canvasLocation" x="1703" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ynr-z9-0cE">
@@ -107,14 +107,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Agp-dC-rkH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Qel-nK-CAc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="White"/>
                         <color key="barTintColor" name="Blue"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Champions-Bold" family="Champions" pointSize="17"/>
                             <color key="textColor" name="White"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Champions-Bold" family="Champions" pointSize="48"/>
                             <color key="textColor" name="White"/>
                         </textAttributes>
                     </navigationBar>

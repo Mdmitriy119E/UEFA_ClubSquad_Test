@@ -18,16 +18,24 @@ struct Team {
 extension Team {
     static func getMockUCLTeam() -> Team {
         var players: [Player] = []
-        for _ in 0..<4 {
-            for playerType in PlayerType.allCases {
+        var number = 1
+        for playerType in PlayerType.allCases.dropLast() {
+            for _ in 0..<4 {
                 let player = Player(image: UIImage(named: "MessiAvatar")!,
-                                    name: "Player name",
+                                    name: "Lionel Messi",
                                     country: "Country",
-                                    number: 24,
+                                    number: number,
                                     type: playerType)
                 players.append(player)
+                number += 1
             }
         }
+        let player = Player(image: UIImage(named: "MessiAvatar")!,
+                            name: "Messi Lionel",
+                            country: "Country",
+                            number: number,
+                            type: .coach)
+        players.append(player)
         let team = Team(name: "Barcelona",
                         logo: UIImage(named: "BarcelonaLogo")!,
                         background: UIImage(named: "BarcelonaUCLBackgroundImage")!,
@@ -37,16 +45,24 @@ extension Team {
     
     static func getMockUELTeam() -> Team {
         var players: [Player] = []
-        for _ in 0..<4 {
-            for playerType in PlayerType.allCases {
+        var number = 1
+        for playerType in PlayerType.allCases.dropLast() {
+            for _ in 0..<4 {
                 let player = Player(image: UIImage(named: "MessiAvatar")!,
-                                    name: "Player name",
+                                    name: "Messi Lionel",
                                     country: "Country",
-                                    number: 24,
+                                    number: number,
                                     type: playerType)
                 players.append(player)
+                number += 1
             }
         }
+        let player = Player(image: UIImage(named: "MessiAvatar")!,
+                            name: "Lionel Messi",
+                            country: "Country",
+                            number: number,
+                            type: .coach)
+        players.append(player)
         let team = Team(name: "Barcelona",
                         logo: UIImage(named: "BarcelonaLogo")!,
                         background: UIImage(named: "BarcelonaUELBackgroundImage")!,

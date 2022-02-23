@@ -17,6 +17,7 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
     private let tableViewFooterForSectionHeight: CGFloat = 8
     private let tableViewPlayerCellHeight: CGFloat = 60
     private var team: Team?
+    private var filteredPlayers: [PlayerType: [Player]] = [:]
     
     // MARK: - Public properties
     static let identifier = String(describing: TeamSquadCollectionViewCell.self)
@@ -47,16 +48,27 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
         return view
     }
     
-    // MARK: - Public properties
-    func setupUI(for team: Team) {
-        self.team = team
+    private func filterPlayers() {
+        for playerType in PlayerType.allCases {
+            let filteredPlayersByPlayerType = team?.players
+                                                .filter({ $0.type == playerType })
+                                                .sorted(by: { $0.number < $1.number })
+            filteredPlayers[playerType] = filteredPlayersByPlayerType
+        }
     }
+    
+    // MARK: - Public properties
+    func setupUI(for team: Team?) {
+        self.team = team
+        filterPlayers()
+    }
+    
 }
 
 // MARK: - Table view data source
 extension TeamSquadCollectionViewCell: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return PlayerType.allCases.count
+        return filteredPlayers.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -68,15 +80,12 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return team?.players.filter({
-            $0.type == PlayerType.allCases[section]
-        }).count ?? 0
-        
+        return filteredPlayers[PlayerType.allCases[section]]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamPlayerTableViewCell.indetifier, for: indexPath) as! TeamPlayerTableViewCell
-        cell.setupUI(with: team?.players[indexPath.row])
+        cell.setupUI(with: filteredPlayers[PlayerType.allCases[indexPath.section]]![indexPath.row])
         return cell
     }
     
@@ -85,6 +94,7 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
         view.backgroundColor = UIColor(named: "DarkBlue")
         let label = UILabel(frame: CGRect(x: 16, y: 0, width: tableView.frame.size.width, height: 50))
         label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.textColor = .white
         label.text = PlayerType.allCases[section].rawValue
         view.addSubview(label)
         return view

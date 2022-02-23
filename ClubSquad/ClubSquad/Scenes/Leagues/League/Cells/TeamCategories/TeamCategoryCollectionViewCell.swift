@@ -17,7 +17,14 @@ class TeamCategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: TeamCategoryCollectionViewCell.self)
     
     // MARK: - Public methods
-    func setUI(with category: String) {
+    func setUI(with category: String, isSelected: Bool) {
         categoryName.text = category
+        if isSelected {
+            underlineView.isHidden = false
+            categoryName.textColor = UIColor(named: "Mint")
+        } else {
+            underlineView.isHidden = true
+            categoryName.textColor = UIColor(named: "White_8Opacity")
+        }
     }
 }

@@ -18,8 +18,8 @@ class TeamPlayerTableViewCell: UITableViewCell {
     // MARK: - Public properties
     static let indetifier = String(describing: TeamPlayerTableViewCell.self)
     
-    func setupUI(with player: Player?) {
-        guard let player = player else { return }
+    // MARK: - Public methods
+    func setupUI(with player: Player) {
         playerAvatar.image = player.image
         playerName.text = player.name
         playerCountry.text = player.country
