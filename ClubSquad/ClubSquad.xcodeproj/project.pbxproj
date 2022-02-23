@@ -12,6 +12,8 @@
 		722D57F927C6163000BA3E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722D57F827C6163000BA3E86 /* Assets.xcassets */; };
 		722D57FC27C6163000BA3E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722D57FA27C6163000BA3E86 /* LaunchScreen.storyboard */; };
 		722D580827C616BB00BA3E86 /* SelectLeague.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722D580727C616BB00BA3E86 /* SelectLeague.storyboard */; };
+		722D580B27C6180900BA3E86 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580A27C6180900BA3E86 /* Player.swift */; };
+		722D580D27C6180F00BA3E86 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580C27C6180F00BA3E86 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		722D57FB27C6163000BA3E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		722D57FD27C6163000BA3E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		722D580727C616BB00BA3E86 /* SelectLeague.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectLeague.storyboard; sourceTree = "<group>"; };
+		722D580A27C6180900BA3E86 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		722D580C27C6180F00BA3E86 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 				722D580327C6164500BA3E86 /* SupportingFiles */,
 				722D580427C6168600BA3E86 /* Assets */,
 				722D580527C6168F00BA3E86 /* Scenes */,
+				722D580927C617D900BA3E86 /* Models */,
 			);
 			path = ClubSquad;
 			sourceTree = "<group>";
@@ -94,6 +99,15 @@
 				722D580727C616BB00BA3E86 /* SelectLeague.storyboard */,
 			);
 			path = SelectLeague;
+			sourceTree = "<group>";
+		};
+		722D580927C617D900BA3E86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				722D580A27C6180900BA3E86 /* Player.swift */,
+				722D580C27C6180F00BA3E86 /* Team.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722D580D27C6180F00BA3E86 /* Team.swift in Sources */,
 				722D57F027C6162F00BA3E86 /* AppDelegate.swift in Sources */,
+				722D580B27C6180900BA3E86 /* Player.swift in Sources */,
 				722D57F227C6162F00BA3E86 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
