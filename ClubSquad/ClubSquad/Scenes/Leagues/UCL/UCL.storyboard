@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Barcelona-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController title="Barcelona" id="Y6W-OH-hqX" customClass="UCLViewController" customModule="ClubSquad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-Zp-Z5S">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="Black"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamHeaderTableViewCell" rowHeight="286" id="wwU-Qw-usF" customClass="TeamHeaderTableViewCell" customModule="ClubSquad" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="286"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwU-Qw-usF" id="JOi-wK-TYt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-8A-5Jl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BarcelonaUCLBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="8ez-RK-ck9">
+                                                            <rect key="frame" x="-1" y="0.0" width="415" height="286"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BarcelonaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-0p-XVW">
+                                                            <rect key="frame" x="288" y="160" width="110" height="110"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round of 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG9-di-Z8Z">
+                                                            <rect key="frame" x="16" y="241" width="96.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" name="White"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dX-5q-0vF">
+                                                            <rect key="frame" x="16" y="224" width="47" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="White7_Opacity"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="vOa-0p-XVW" secondAttribute="bottom" constant="16" id="3aD-Vg-Laf"/>
+                                                        <constraint firstItem="zG9-di-Z8Z" firstAttribute="leading" secondItem="9QC-8A-5Jl" secondAttribute="leading" constant="16" id="BDT-63-U95"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vOa-0p-XVW" secondAttribute="trailing" constant="16" id="E8O-B8-idG"/>
+                                                        <constraint firstItem="2dX-5q-0vF" firstAttribute="leading" secondItem="9QC-8A-5Jl" secondAttribute="leading" constant="16" id="M5I-B9-v2j"/>
+                                                        <constraint firstItem="zG9-di-Z8Z" firstAttribute="top" secondItem="2dX-5q-0vF" secondAttribute="bottom" id="QbQ-F9-zfK"/>
+                                                        <constraint firstItem="8ez-RK-ck9" firstAttribute="top" secondItem="9QC-8A-5Jl" secondAttribute="top" id="RPi-g5-LV4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zG9-di-Z8Z" secondAttribute="bottom" constant="24" id="Tgy-Nv-7kR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8ez-RK-ck9" secondAttribute="bottom" id="kdV-CN-UNh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8ez-RK-ck9" secondAttribute="trailing" id="rad-aN-B0H"/>
+                                                        <constraint firstItem="8ez-RK-ck9" firstAttribute="leading" secondItem="9QC-8A-5Jl" secondAttribute="leading" constant="-1" id="smz-ts-5P4"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9QC-8A-5Jl" secondAttribute="bottom" id="7CS-kf-tty"/>
+                                                <constraint firstItem="9QC-8A-5Jl" firstAttribute="leading" secondItem="JOi-wK-TYt" secondAttribute="leading" id="YFG-zL-X4y"/>
+                                                <constraint firstItem="9QC-8A-5Jl" firstAttribute="top" secondItem="JOi-wK-TYt" secondAttribute="top" id="gvs-Za-GXA"/>
+                                                <constraint firstAttribute="trailing" secondItem="9QC-8A-5Jl" secondAttribute="trailing" id="qXd-ca-2ER"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="10000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="teamBackground" destination="8ez-RK-ck9" id="Pyn-kk-eTc"/>
+                                            <outlet property="teamLogo" destination="vOa-0p-XVW" id="R5v-vo-xr0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="Black"/>
+                        <constraints>
+                            <constraint firstItem="wyB-Zp-Z5S" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="60L-jN-v06"/>
+                            <constraint firstAttribute="bottom" secondItem="wyB-Zp-Z5S" secondAttribute="bottom" id="QVC-OM-ini"/>
+                            <constraint firstItem="wyB-Zp-Z5S" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="qfW-Yd-2sC"/>
+                            <constraint firstItem="wyB-Zp-Z5S" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="x9y-B1-w1J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wyB-Zp-Z5S" id="Czg-f4-0Jt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BarcelonaLogo" width="110" height="110"/>
+        <image name="BarcelonaUCLBackgroundImage" width="375" height="286"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White7_Opacity">
+            <color red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
