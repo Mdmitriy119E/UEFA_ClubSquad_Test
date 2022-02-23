@@ -18,7 +18,7 @@ struct Team {
 extension Team {
     static func getMockUCLTeam() -> Team {
         var players: [Player] = []
-        for _ in 0..<5 {
+        for _ in 0..<4 {
             for playerType in PlayerType.allCases {
                 let player = Player(image: UIImage(named: "MessiAvatar")!,
                                     name: "Player name",
@@ -37,7 +37,7 @@ extension Team {
     
     static func getMockUELTeam() -> Team {
         var players: [Player] = []
-        for _ in 0..<5 {
+        for _ in 0..<4 {
             for playerType in PlayerType.allCases {
                 let player = Player(image: UIImage(named: "MessiAvatar")!,
                                     name: "Player name",

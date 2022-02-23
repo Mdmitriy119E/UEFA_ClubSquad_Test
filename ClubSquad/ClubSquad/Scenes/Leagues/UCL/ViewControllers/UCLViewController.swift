@@ -52,6 +52,7 @@ extension UCLViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamHeaderTableViewCell.identifier, for: indexPath) as! TeamHeaderTableViewCell
+            cell.setupUI(for: team)
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoriesTableViewCell.identifier, for: indexPath) as! TeamCategoriesTableViewCell
@@ -73,7 +74,18 @@ extension UCLViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             return tableViewCategoriesCellHeight
         } else {
-            return tableViewCategoryCellHeight
+            return getHeightForSquad()
         }
+    }
+    
+    private func getHeightForSquad() -> CGFloat {
+        let sectionHeaderHeight = 50
+        let sectionsHeadersHeight = sectionHeaderHeight * PlayerType.allCases.count
+        let playerCellHeight = 60
+        let playersCellsHeight = playerCellHeight * team.players.count
+        let sectionFooterHeight = 8
+        let sectionsFooterHeight = sectionFooterHeight * PlayerType.allCases.count
+        let tableViewFooterHeight = 84
+        return CGFloat(sectionsHeadersHeight + playersCellsHeight + sectionsFooterHeight + tableViewFooterHeight)
     }
 }

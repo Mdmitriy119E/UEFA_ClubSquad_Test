@@ -14,7 +14,7 @@ class TeamCategoryTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     private var allCategories: [String] = []
-    private var team: Team?
+    private var team: Team!
     
     // MARK: - Public properties
     static let identifier = String(describing: TeamCategoryTableViewCell.self)
@@ -60,7 +60,7 @@ extension TeamCategoryTableViewCell: UICollectionViewDataSource {
                 return cell
             case 4:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamSquadCollectionViewCell.identifier, for: indexPath) as! TeamSquadCollectionViewCell
-                cell.setupUI(for: team!)
+                cell.setupUI(for: team)
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamOverviewCollectionViewCell.identifier, for: indexPath) as! TeamOverviewCollectionViewCell
@@ -75,19 +75,6 @@ extension TeamCategoryTableViewCell: UICollectionViewDelegate { }
 // MARK: - Collection view delegate flow layout
 extension TeamCategoryTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.item {
-            case 0:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-            case 1:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-            case 2:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-            case 3:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-            case 4:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-            default:
-                return CGSize(width: collectionView.frame.size.width, height: 400)
-        }
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
 }

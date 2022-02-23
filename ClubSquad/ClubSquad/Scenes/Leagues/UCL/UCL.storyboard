@@ -19,9 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-Zp-Z5S">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-Zp-Z5S">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" name="Black"/>
+                                <color key="backgroundColor" name="LightBlack"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamHeaderTableViewCell" rowHeight="286" id="wwU-Qw-usF" customClass="TeamHeaderTableViewCell" customModule="ClubSquad" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="286"/>
@@ -160,7 +160,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7s1-lJ-rTr">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
-                                                    <color key="backgroundColor" name="Blue"/>
+                                                    <color key="backgroundColor" name="LightBlack"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1bc-T1-CzJ">
                                                         <size key="itemSize" width="414" height="400"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -217,7 +217,7 @@
                                                                 <subviews>
                                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yVf-dB-sXM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
-                                                                        <color key="backgroundColor" name="Black"/>
+                                                                        <color key="backgroundColor" name="LightBlack"/>
                                                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                                         <prototypes>
                                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamPlayerTableViewCell" rowHeight="60" id="YlB-ne-YJQ" customClass="TeamPlayerTableViewCell" customModule="ClubSquad" customModuleProvider="target">
@@ -314,7 +314,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="Black"/>
+                        <color key="backgroundColor" name="LightBlack"/>
                         <constraints>
                             <constraint firstItem="wyB-Zp-Z5S" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="60L-jN-v06"/>
                             <constraint firstAttribute="bottom" secondItem="wyB-Zp-Z5S" secondAttribute="bottom" id="QVC-OM-ini"/>
@@ -334,14 +334,14 @@
     <resources>
         <image name="BarcelonaLogo" width="110" height="110"/>
         <image name="BarcelonaUCLBackgroundImage" width="375" height="286"/>
-        <namedColor name="Black">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Blue">
             <color red="0.082352941176470587" green="0.082352941176470587" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.039215686274509803" green="0.039215686274509803" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBlack">
+            <color red="0.0" green="0.0" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Mint">
             <color red="0.35294117647058826" green="0.96862745098039216" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

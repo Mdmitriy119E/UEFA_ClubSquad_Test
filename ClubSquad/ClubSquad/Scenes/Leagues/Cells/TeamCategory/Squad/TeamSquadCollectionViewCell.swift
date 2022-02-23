@@ -14,6 +14,7 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private properties
     private let tableViewHeaderForSectionHeight: CGFloat = 50
+    private let tableViewFooterForSectionHeight: CGFloat = 8
     private let tableViewPlayerCellHeight: CGFloat = 60
     private var team: Team?
     
@@ -33,6 +34,17 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
+        tableView.tableFooterView = getTableViewFooterView()
+    }
+    
+    private func getTableViewFooterView() -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 84))
+        view.backgroundColor = UIColor(named: "LightBlack")
+        let label = UILabel(frame: CGRect(x: 16, y: 16, width: tableView.frame.size.width, height: 15))
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.text = "* Player list B"
+        view.addSubview(label)
+        return view
     }
     
     // MARK: - Public properties
@@ -41,6 +53,7 @@ class TeamSquadCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Table view data source
 extension TeamSquadCollectionViewCell: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return PlayerType.allCases.count
@@ -50,15 +63,20 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
         return getViewForHeaderInSection(section)
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return getViewForFooterInSection()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return team!.players.filter({
+        return team?.players.filter({
             $0.type == PlayerType.allCases[section]
-        }).count
+        }).count ?? 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamPlayerTableViewCell.indetifier, for: indexPath) as! TeamPlayerTableViewCell
-        cell.setupUI(with: team!.players[indexPath.row])
+        cell.setupUI(with: team?.players[indexPath.row])
         return cell
     }
     
@@ -71,12 +89,22 @@ extension TeamSquadCollectionViewCell: UITableViewDataSource {
         view.addSubview(label)
         return view
     }
+    
+    private func getViewForFooterInSection() -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 8))
+        view.backgroundColor = UIColor(named: "LightBlack")
+        return view
+    }
 }
 
 // MARK: - Table view delegate
 extension TeamSquadCollectionViewCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableViewHeaderForSectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return tableViewFooterForSectionHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
