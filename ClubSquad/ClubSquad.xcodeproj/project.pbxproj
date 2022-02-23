@@ -14,6 +14,7 @@
 		722D580827C616BB00BA3E86 /* SelectLeague.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722D580727C616BB00BA3E86 /* SelectLeague.storyboard */; };
 		722D580B27C6180900BA3E86 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580A27C6180900BA3E86 /* Player.swift */; };
 		722D580D27C6180F00BA3E86 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D580C27C6180F00BA3E86 /* Team.swift */; };
+		722D580F27C618E200BA3E86 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722D580E27C618E200BA3E86 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		722D580727C616BB00BA3E86 /* SelectLeague.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectLeague.storyboard; sourceTree = "<group>"; };
 		722D580A27C6180900BA3E86 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		722D580C27C6180F00BA3E86 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		722D580E27C618E200BA3E86 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				722D57F827C6163000BA3E86 /* Assets.xcassets */,
+				722D580E27C618E200BA3E86 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				722D57FC27C6163000BA3E86 /* LaunchScreen.storyboard in Resources */,
+				722D580F27C618E200BA3E86 /* Colors.xcassets in Resources */,
 				722D580827C616BB00BA3E86 /* SelectLeague.storyboard in Resources */,
 				722D57F927C6163000BA3E86 /* Assets.xcassets in Resources */,
 			);
