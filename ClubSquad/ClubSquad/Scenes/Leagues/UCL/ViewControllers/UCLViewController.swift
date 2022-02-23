@@ -13,7 +13,9 @@ class UCLViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Private properties
-    private let tableViewHeaderHeight: CGFloat = 286
+    private let tableViewHeaderCellHeight: CGFloat = 286
+    private let tableViewCategoriesCellHeight: CGFloat = 44
+    private let categories =  ["Overview", "Matches", "Groups", "Stats", "Squad"]
     
     // MARK: - Overriden methods
     override func viewDidLoad() {
@@ -42,18 +44,28 @@ class UCLViewController: UIViewController {
 // MARK: - Table view data source
 extension UCLViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TeamHeaderTableViewCell.identifier, for: indexPath) as! TeamHeaderTableViewCell
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TeamHeaderTableViewCell.identifier, for: indexPath) as! TeamHeaderTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TeamCategoriesTableViewCell.identifier, for: indexPath) as! TeamCategoriesTableViewCell
+            cell.setupUI(with: categories)
+            return cell
+        }
     }
 }
 
 // MARK: - Table view delegate
 extension UCLViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableViewHeaderHeight
+        if indexPath.row == 0 {
+            return tableViewHeaderCellHeight
+        } else {
+            return tableViewCategoriesCellHeight
+        }
     }
 }

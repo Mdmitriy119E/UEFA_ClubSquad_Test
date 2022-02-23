@@ -20,6 +20,8 @@
 		722D581727C61E3E00BA3E86 /* UCLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D581627C61E3E00BA3E86 /* UCLViewController.swift */; };
 		722D581927C61E4300BA3E86 /* UELViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D581827C61E4300BA3E86 /* UELViewController.swift */; };
 		722D581F27C6200900BA3E86 /* TeamHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D581E27C6200900BA3E86 /* TeamHeaderTableViewCell.swift */; };
+		722D582227C6239700BA3E86 /* TeamCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D582127C6239700BA3E86 /* TeamCategoriesTableViewCell.swift */; };
+		722D582427C623B300BA3E86 /* TeamCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D582327C623B300BA3E86 /* TeamCategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		722D581627C61E3E00BA3E86 /* UCLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCLViewController.swift; sourceTree = "<group>"; };
 		722D581827C61E4300BA3E86 /* UELViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UELViewController.swift; sourceTree = "<group>"; };
 		722D581E27C6200900BA3E86 /* TeamHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		722D582127C6239700BA3E86 /* TeamCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		722D582327C623B300BA3E86 /* TeamCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				722D581227C61D1000BA3E86 /* UCL.storyboard */,
-				722D581627C61E3E00BA3E86 /* UCLViewController.swift */,
+				722D582527C6255A00BA3E86 /* ViewControllers */,
 			);
 			path = UCL;
 			sourceTree = "<group>";
@@ -137,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				722D581427C61D1400BA3E86 /* UEL.storyboard */,
-				722D581827C61E4300BA3E86 /* UELViewController.swift */,
+				722D582627C6256200BA3E86 /* ViewControllers */,
 			);
 			path = UEL;
 			sourceTree = "<group>";
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				722D581D27C61FD100BA3E86 /* TeamHeader */,
+				722D582027C6237900BA3E86 /* TeamCategories */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -166,6 +171,31 @@
 				722D581E27C6200900BA3E86 /* TeamHeaderTableViewCell.swift */,
 			);
 			path = TeamHeader;
+			sourceTree = "<group>";
+		};
+		722D582027C6237900BA3E86 /* TeamCategories */ = {
+			isa = PBXGroup;
+			children = (
+				722D582127C6239700BA3E86 /* TeamCategoriesTableViewCell.swift */,
+				722D582327C623B300BA3E86 /* TeamCategoryCollectionViewCell.swift */,
+			);
+			path = TeamCategories;
+			sourceTree = "<group>";
+		};
+		722D582527C6255A00BA3E86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				722D581627C61E3E00BA3E86 /* UCLViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		722D582627C6256200BA3E86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				722D581827C61E4300BA3E86 /* UELViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				722D581727C61E3E00BA3E86 /* UCLViewController.swift in Sources */,
+				722D582227C6239700BA3E86 /* TeamCategoriesTableViewCell.swift in Sources */,
 				722D580D27C6180F00BA3E86 /* Team.swift in Sources */,
+				722D582427C623B300BA3E86 /* TeamCategoryCollectionViewCell.swift in Sources */,
 				722D57F027C6162F00BA3E86 /* AppDelegate.swift in Sources */,
 				722D580B27C6180900BA3E86 /* Player.swift in Sources */,
 				722D57F227C6162F00BA3E86 /* SceneDelegate.swift in Sources */,

@@ -13,7 +13,6 @@ class TeamHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var teamBackground: UIImageView!
     @IBOutlet weak var teamLogo: UIImageView!
     
-    
     // MARK: - Public properties
     static let identifier = String(describing: TeamHeaderTableViewCell.self)
     
